@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const menuItems = [
   {
-    title: "Menu",
+    title: "MENU",
     items: [
       {
         icon: "/home.png",
@@ -13,49 +13,49 @@ const menuItems = [
       },
       {
         icon: "/teacher.png",
-        label: "Professores",
+        label: "Teachers",
         href: "/list/teachers",
         visible: ["admin", "teacher"],
       },
       {
         icon: "/student.png",
-        label: "Estudantes",
+        label: "Students",
         href: "/list/students",
         visible: ["admin", "teacher"],
       },
       {
         icon: "/parent.png",
-        label: "Pais",
+        label: "Parents",
         href: "/list/parents",
         visible: ["admin", "teacher"],
       },
       {
         icon: "/subject.png",
-        label: "Assuntos",
+        label: "Subjects",
         href: "/list/subjects",
         visible: ["admin"],
       },
       {
         icon: "/class.png",
-        label: "Aulas",
+        label: "Classes",
         href: "/list/classes",
         visible: ["admin", "teacher"],
       },
       {
         icon: "/lesson.png",
-        label: "Lições",
+        label: "Lessons",
         href: "/list/lessons",
         visible: ["admin", "teacher"],
       },
       {
         icon: "/exam.png",
-        label: "Provas",
+        label: "Exams",
         href: "/list/exams",
         visible: ["admin", "teacher", "student", "parent"],
       },
       {
         icon: "/assignment.png",
-        label: "Tarefas",
+        label: "Assignments",
         href: "/list/assignments",
         visible: ["admin", "teacher", "student", "parent"],
       },
@@ -67,32 +67,32 @@ const menuItems = [
       },
       {
         icon: "/attendance.png",
-        label: "Presença",
+        label: "Attendance",
         href: "/list/attendance",
         visible: ["admin", "teacher", "student", "parent"],
       },
       {
         icon: "/calendar.png",
-        label: "Eventos",
+        label: "Events",
         href: "/list/events",
         visible: ["admin", "teacher", "student", "parent"],
       },
       {
         icon: "/message.png",
-        label: "Mensagens",
+        label: "Messages",
         href: "/list/messages",
         visible: ["admin", "teacher", "student", "parent"],
       },
       {
         icon: "/announcement.png",
-        label: "Anúncios",
+        label: "Announcements",
         href: "/list/announcements",
         visible: ["admin", "teacher", "student", "parent"],
       },
     ],
   },
   {
-    title: "Configurações",
+    title: "OTHER",
     items: [
       {
         icon: "/profile.png",
