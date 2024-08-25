@@ -1,6 +1,9 @@
+import Link from 'next/link';
+import Image from 'next/image'
+
 const menuItems = [
   {
-    title: "MENU",
+    title: "Menu",
     items: [
       {
         icon: "/home.png",
@@ -10,49 +13,49 @@ const menuItems = [
       },
       {
         icon: "/teacher.png",
-        label: "Teachers",
+        label: "Professores",
         href: "/list/teachers",
         visible: ["admin", "teacher"],
       },
       {
         icon: "/student.png",
-        label: "Students",
+        label: "Estudantes",
         href: "/list/students",
         visible: ["admin", "teacher"],
       },
       {
         icon: "/parent.png",
-        label: "Parents",
+        label: "Pais",
         href: "/list/parents",
         visible: ["admin", "teacher"],
       },
       {
         icon: "/subject.png",
-        label: "Subjects",
+        label: "Assuntos",
         href: "/list/subjects",
         visible: ["admin"],
       },
       {
         icon: "/class.png",
-        label: "Classes",
+        label: "Aulas",
         href: "/list/classes",
         visible: ["admin", "teacher"],
       },
       {
         icon: "/lesson.png",
-        label: "Lessons",
+        label: "Lições",
         href: "/list/lessons",
         visible: ["admin", "teacher"],
       },
       {
         icon: "/exam.png",
-        label: "Exams",
+        label: "Provas",
         href: "/list/exams",
         visible: ["admin", "teacher", "student", "parent"],
       },
       {
         icon: "/assignment.png",
-        label: "Assignments",
+        label: "Tarefas",
         href: "/list/assignments",
         visible: ["admin", "teacher", "student", "parent"],
       },
@@ -64,32 +67,32 @@ const menuItems = [
       },
       {
         icon: "/attendance.png",
-        label: "Attendance",
+        label: "Presença",
         href: "/list/attendance",
         visible: ["admin", "teacher", "student", "parent"],
       },
       {
         icon: "/calendar.png",
-        label: "Events",
+        label: "Eventos",
         href: "/list/events",
         visible: ["admin", "teacher", "student", "parent"],
       },
       {
         icon: "/message.png",
-        label: "Messages",
+        label: "Mensagens",
         href: "/list/messages",
         visible: ["admin", "teacher", "student", "parent"],
       },
       {
         icon: "/announcement.png",
-        label: "Announcements",
+        label: "Anúncios",
         href: "/list/announcements",
         visible: ["admin", "teacher", "student", "parent"],
       },
     ],
   },
   {
-    title: "OTHER",
+    title: "Configurações",
     items: [
       {
         icon: "/profile.png",
@@ -112,3 +115,23 @@ const menuItems = [
     ],
   },
 ];
+
+const Menu = () => {
+  return (
+    <div className='mt-4 text-sm'>
+      {menuItems.map(i => (
+        <div className='flex flex-col gap=2' key={i.title}>
+          <span className='hidden lg:block text-gray-400 font-light my-4'>{i.title}</span>
+          {i.items.map(item => (
+            <Link href={item.href} key={item.label} className='flex items-center justify-center lg:justify-start gap-4 text-gray-500 py-2'>
+              <Image alt={item.label} src={item.icon} width={20} height={20} />
+              <span className='hidden lg:block'>{ item.label }</span>
+            </Link>
+          ))}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default Menu;
